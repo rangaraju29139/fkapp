@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Page Content -->
+  <div class="container ">
+    <div class="bg">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Fake News Detection System</h1>
+        <p class="lead">Here we can detect the whether the news is real or fake for you!!</p>
+        <!--<ul class="list-unstyled">
+          <li>Bootstrap 4.2.1</li>
+          <li>jQuery 3.3.1</li>
+        </ul>
+      -->
+      <form action="{{ url_for('result')}}" method='POST'>
+  <div class="form-group">
+    <label for="article_text">Enter your news article title</label>
+    <input type="text" class="form-control" id="article_text" name="article_text" required>
+  </div>
+  <button type="submit" class="btn btn-success">Predict</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content%}

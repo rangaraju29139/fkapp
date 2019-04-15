@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Page Content -->
+  <div class="container ">
+    <div class="bg">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Fake News Detection System</h1>
+        <p class="lead">Here we can detect the whether the news is real or fake for you!!</p>
+
+      {% if prediction == 'REAL'%}
+        <div class="alert alert-success">
+  <strong>Real News!!</strong> The News Article you have entered is predicted as Real.
+</div>
+     {% elif prediction == 'FAKE' %}
+        <div class="alert alert-danger">
+  <strong>Fake News!!</strong> The News Article you have entered is predicted as Fake
+</div>
+
+    {% endif %}
+    <a href="{{ url_for('index')}}"><button type="button" class="btn btn-success">Want to Predict Again!!!</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}
