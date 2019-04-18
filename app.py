@@ -23,6 +23,7 @@ def result():
     model_file.close()
     #if request.method == 'POST':
     text = request.form['article_text']
+
     data = [text]
     hash_vectorizer = HashingVectorizer(stop_words='english', non_negative=True)
     check = hash_vectorizer.fit_transform(data)
